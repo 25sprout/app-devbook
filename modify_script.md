@@ -62,7 +62,7 @@ if [ -n "$LOGCAT_PID" ] ; then
 fi
 ```
 
-CI console 會顯示以下結果
+CI console 會顯示以下結果<br/>
 ![](https://i.imgur.com/UxLlKd1.png)
 
 > 因為 `Instrument Test` 的測試結果是顯示在 *Logcat* 上，且 Tag 為 `TestRunner`，用這個方式爬出 TestRunner 的內容並顯示在 ci console

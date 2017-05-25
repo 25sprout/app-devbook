@@ -8,12 +8,12 @@
 ### 0. Version 的命名
 關於 VersionCode 的命名規則，我是參考:
 > - [The Rules of Android VersionName & VersionCode](http://blog.ma.beibeilab.com/android-version-rule/)
->
+
 這個方法的另一個好處是，可以輕易從 versioncode 知道是哪個 branch(dev, staging, production)
 
 ### 1. 建立 version.properties
 > 此檔案紀錄各個 branch(dev, staging, production)的版號
->
+
 ``` properties
 version_dev=1.0.1-SNAPSHOT
 version_staging=1.0.1-RC1

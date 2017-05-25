@@ -8,13 +8,15 @@
 >
 
 ### 1. 設置 keytore
-以我的例子，是放在 `~/Workspace/Android/keystore/my_keystore.jks`
+以我的例子，是放在測試電腦的 `~/Workspace/Android/keystore/my_keystore.jks`
 
 ### 2. 設定 Variable
 **進入設定 > Variable**
+<br/>
 ![](https://i.imgur.com/TeY9OAA.png)
 <br/>
 **新增 Variable**
+<br/>
 ![](https://i.imgur.com/yiDIJ1d.png)
 
 新增的變數有四個
@@ -22,7 +24,7 @@
     - KEYSTORE_PASSWORD
     - KEYSTORE_ALIAS
     - KEYSTORE_ALIAS_PASSWORD
-
+<br/>
  ![](https://i.imgur.com/RP70DAa.png)
  ![](https://i.imgur.com/uDsDKW3.png)
 
@@ -95,5 +97,5 @@ buildSignedApk:
     - app/build/outputs/
 ```
 
-如此就可以在 CI 中打包 signed apk
+如此就可以在 CI 中打包 signed apk<br/>
 ![](https://i.imgur.com/36PKe1f.png)
