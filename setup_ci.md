@@ -8,11 +8,6 @@
 ``` yml
 image: openjdk:8-jdk
 
-variables:
-  ANDROID_COMPILE_SDK: "25"
-  ANDROID_BUILD_TOOLS: "25.0.2"
-  ANDROID_SDK_TOOLS: "25.2.5"
-
 before_script:
   - export ANDROID_HOME=/Users/25sprout/Workspace/Android/sdk/
 
