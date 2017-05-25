@@ -49,7 +49,7 @@ tasks.withType(Test) {
 }
 ```
 
-CI console 會顯示以下的結果
+CI console 會顯示以下的結果<br/>
 ![](https://i.imgur.com/auvOX2i.png)
 
 ### 顯示 instrument test 狀態
