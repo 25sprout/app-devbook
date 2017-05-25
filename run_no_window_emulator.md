@@ -1,11 +1,11 @@
 # Run no-window emulator
-在測試的時候，你不一定需要真的看到 emulator 跑起來的樣子
-所以你可以使用 `no-window` 參數
-但有時候你又會想要看到 emulator 的狀況
-最好的方法，就是在 gitlab > Variable 加入參數設定
+在測試的時候，你不一定需要真的看到 emulator 跑起來的樣子<br/>
+所以你可以使用 `no-window` 參數<br/>
+但有時候你又會想要看到 emulator 的狀況<br/>
+最好的方法，就是在 gitlab > Variable 加入參數設定<br/>
 
 ## step 1
-在 gitlab 新增 `no-window` 變數
+在 gitlab 新增 `no-window` 變數<br/>
 ![](https://i.imgur.com/TK00IU2.png)
 
 ## step 2
@@ -41,4 +41,4 @@ instrumentTests:
 ```
 
 ## step 4
-這樣你可以隨時在 Gitlab 上修改變數(yes or no)，來決定要不要顯示 emulator window
+這樣你可以隨時在 Gitlab 上修改變數(**yes** or **no**)，來決定要不要顯示 emulator window
