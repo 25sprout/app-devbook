@@ -19,6 +19,7 @@
    * [Espresso + Spoon](espresso_+_spoon.md)
    * [RxJava / RxAndroid](rxjava__rxandroid.md)
    * [Annotation](annotation.md)
+* [Gitlab CI for Android](gitlab_ci_for_android.md)
 * [Code Style](code_style.md)
 * [Designer Support Guide](app_design_guide.md)
 * [Reference](reference.md)
@@ -26,4 +27,3 @@
 * iOS Resources
 * [Study](study.md)
    * [Android Performance Patterns](android_performance_patterns.md)
-
