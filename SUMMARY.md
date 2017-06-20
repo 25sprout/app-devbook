@@ -20,6 +20,7 @@
    * [RxJava / RxAndroid](rxjava__rxandroid.md)
    * [Annotation](annotation.md)
 * [Gitlab CI for Android](gitlab_ci_for_android.md)
+   * [簡介](gitlab_ci_intro.md)
    * [設定 Runner](setup_runner.md)
    * [設定 Gitlab CI](setup_ci.md)
    * [調整 script](modify_script.md)
@@ -33,3 +34,8 @@
 * iOS Resources
 * [Study](study.md)
    * [Android Performance Patterns](android_performance_patterns.md)
+   * [Publish An Android Library By Jitpack](publish_library_by_jitpack.md)
+   * [Git Rebase or Merge?](git_rebase_and_merge.md)
+   * [Sharding Test With Spoon](sharding_test.md)
+   * [Code Check Plugins](code_check_plugin.md)
+   * [Rxjava2](rxjava2.md)
