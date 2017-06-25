@@ -3,30 +3,48 @@
 這篇是給製作APP UI 的 Designer 看的文章。  
 將詳細說明怎麼同時設計 Android and iOS UI，及其需要注意的地方。
 
-* 收集到的 Sketch UI kit [看這邊 內部專屬唷](https://drive.google.com/drive/folders/0B4FiKSJ3us2LY1JxbWZWTkxHeXM)
 * iOS Design Guideline : [https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/index.html\#//apple\_ref/doc/uid/TP40006556](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/index.html#//apple_ref/doc/uid/TP40006556)
 * Android Design Guideline [http://developer.android.com/intl/zh-tw/design/index.html](http://developer.android.com/intl/zh-tw/design/index.html)
 
-## 設計師需提供的 APP UI Resource
+---
+
+## 工具與交付
+
+#### 設計
+建議使用 Sketch 開發，因為它可以大量切圖，省去非常多功夫。而且他是全向量的。本章節所提供的懶人包也都會是 Skecth Format。
+
+#### 溝通與標註
+建議直接使用 Zeplin，工程師可以直接看上面物件的間距，色碼等資訊。
+
+### 交付檔案
 
 在你完成每個 APP UI 設計時，你應該提供以下檔案給工程師，**也需要特別注意在 iOS 跟 Android 上不同的畫面**。
 
-懶人包下載位置：[內部專屬唷](https://drive.google.com/drive/folders/0B4FiKSJ3us2LMEdIODBIQUtMUkk)
-
-* **Design File**：自己保留，不一定需要給工程師。
-* **Flow**：APP 的 Flow Document，通常我是直接會出一整頁的 sketch PDF，你也可以用別的工具 EX: POP or Xmind，之所以沒有選用後者，是因為通常 UI 會改很很多次，所以後來的更改通常都會懶得上到 POP XD。
-* **Resource Folder**：所有會出的檔案
+* **Design File**：Sketch File，可以自己保留，不一定需要給工程師。
+* **Flow**：APP 的 Flow Document 有幾種交付的方式
+ - 使用 Zeplin 的 Section 功能分隔說明
+ - 使用 Sketch 的 Artboard 框住所有的畫面，匯出一個 PDF
+ - 可以用別的工具 EX: POP or Xmind，但因為通常 UI 會改很很多次，所以後來的更改通常都會懶得再更新到額外的工具。
+* **Measurement**：UI 上的物件間隔資訊，可以直接在 Zeplin 觀看即可。
+* **Resource Folder**：所有匯出的檔案
   * **Android**：Android UI assets，需再細分為五個解析度 folder。
   * **iOS**：iOS Assets，不用再細分 folder 檔名會有 @2x 跟沒有 @2x 的差異。
   * **launcher**：所有的 launcher icon 們。
-  * **screenshot**：所有畫面的一張一張的圖，APP 工程師 layout UI 用。
-  * **color file**：整個 APP 的色碼表：所有用到的 APP 顏色。
+  * **screenshot**：上架 APP 時所需的螢幕截圖，最好是 APP 主要功能的那幾個畫面。
+  * **color define**：搭配 Zeplin 自動產生的即可。
 
 ---
 
-## 工具Sketch
+## 懶人包
 
-建議使用 Sketch 開發，因為它可以大量切圖，省去非常多功夫。而且他是全向量的。本章節所提供的懶人包也都會是 Skecth Format
+下載：[UIkit_Android_iOS.sketch](https://drive.google.com/file/d/0B4FiKSJ3us2LMVVoNzZTZElGZVU/view)
+
+內容包含：
+- Device Metrics：比較 Android & iOS Phone / Tablet 的倍率
+- Android Phone & Tablet：mdpi(1x) 的模板
+- iOS Phone & Tablet：1x 的模板
+- Android & iOS Launchers：此模板可以讓你一鍵產生所有 Android & iOS Launchers 圖檔
+- Android .9 Sample
 
 ---
 
@@ -34,17 +52,12 @@
 
 由於 Android 跟 iOS 螢幕解析度不一致，且 Device 種類太多，所以設計的時候，建議做一個可以放大的基本尺寸。
 
-#### \[ Android \]
+#### \[ Android Phone & Tablet \]
 
-使用 `android_UI.sketch` 可以省下很多工夫。
+使用 `UIkit_Android_iOS.sketch` 中的 `Android Phone & Tablet` 可以省下很多工夫。
 
-|  | dpi | 學名 | 別名 | 以 360 \* 640 螢幕為例尺寸 | 裝置範例 |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| 1倍 | 160dpi | Medium density | **mdpi** | 360px \* 640px |  |
-| 1.5倍 | 240dpi | High density | **hdpi** | 480px \* 800px | Nexus S |
-| 2倍 | 320dpi | Extra high density | **xhdpi** | 720px \* 1280px | HTC One X |
-| 3倍 | 480dpi |  | **xxhdpi** | 1080px \* 1920px | Nexus 5 HTC One M8 |
-| 4倍 | 640dpi |  | **xxxhdpi** | 1440px \* 2560px | Nexus 6 |
+![](images/design/metric_android_phone.png)
+![](images/design/metric_android_tablet.png)
 
 **這邊要特別注意，標給 Android 的 margin, padding... 等 Measurement 都必須是以 **`160dpi`** 為 1 倍單位。**
 
@@ -78,7 +91,6 @@ res/layout-sw600dp/main_activity.xml   # For 7” tablets (600dp wide and bigger
 res/layout-sw720dp/main_activity.xml   # For 10” tablets (720dp wide and bigger)
 ```
 
-
 參考網址：
 
 * 凱西整理建議尺寸：[https://docs.google.com/spreadsheets/d/1b-qyqvTmatyC6gCy71QuKbXE-Wqj\_oxjM5wHfT3Q72M/edit\#gid=0](https://docs.google.com/spreadsheets/d/1b-qyqvTmatyC6gCy71QuKbXE-Wqj_oxjM5wHfT3Q72M/edit#gid=0) \(內部 Only\)
@@ -87,49 +99,64 @@ res/layout-sw720dp/main_activity.xml   # For 10” tablets (720dp wide and bigge
 * Google 建議UI 間距：[https://www.google.com/design/spec/layout/metrics-keylines.html\#metrics-keylines-keylines-spacing](https://www.google.com/design/spec/layout/metrics-keylines.html#metrics-keylines-keylines-spacing)
 * 教你認識 DPI : [http://sebastien-gabriel.com/designers-guide-to-dpi/](http://sebastien-gabriel.com/designers-guide-to-dpi/)
 
-#### \[ iOS \]
+#### \[ iOS Phone & Tablet \]
 
-使用 `ios_UI.sketch` 可以省下很多工夫。Folder 裡面有一個 @2x 的，僅參考用唷。請都改用 `320 * 568` 設計。
+使用 `UIkit_Android_iOS.sketch` 中的 `iOS Phone & Tablet` 可以省下很多工夫。
 
-|  | 螢幕基本尺寸 | 裝置範例 |
-| --- | --- | --- |
-| 1倍 | 320 \* 568 | iPhone 5, 5C, 5S, iPod Touch 5g |
-| 2倍\(@2x\) | 640 \* 1136 | iPhone 6, iPhone 6s |
+![](images/design/metric_ios_phone.png)
+![](images/design/metric_ios_tablet.png)
 
 * 參考：[http://iosres.com/](http://iosres.com/)
 * 參考：[https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html)
 
 ## Launcher Icon 尺寸
 
-要跨雙系統需要非常多不同尺寸的launcher icon，詳列如下。  
-另外您可以使用 `launcher.sketch` 可以省下很多工夫。
+要跨雙系統需要非常多不同尺寸的launcher icon，詳列如下。使用 `UIkit_Android_iOS.sketch` 中的 `Android & iOS Launchers` 可以省下很多工夫。
 
 #### \[ Android \]
 
 | 檔名 | 尺寸 |
 | --- | --- |
 | GooglePlay.png | 512 \* 512 |
-| GooglePlayMarket.jpg | 1024 \* 500 |
 | GooglePlayMarket.png | 1024 \* 500 |
 | ic\_launcher-mdpi.png | 48 \* 48 |
 | ic\_launcher-hdpi.png | 72 \* 72 |
 | ic\_launcher-xhdpi.png | 96 \* 96 |
 | ic\_launcher-xxhdpi.png | 144 \* 144 |
 | ic\_launcher-xxxhdpi.png | 192 \* 192 |
+| mdpi/icon\_notify\_large.png | 64 \* 64 |
+| hdpi/icon\_notify\_large.png | 96 \* 96 |
+| xhdpi/icon\_notify\_large.png | 128 \* 128 |
+| xxhdpi/icon\_notify\_large.png | 192 \* 192 |
+| xxxhdpi/icon\_notify\_large.png | 256 \* 256 |
+| mdpi/icon\_notify\_small-mdpi.png | 24 \* 24 |
+| hdpi/icon\_notify\_small.png | 36 \* 36 |
+| xhdpi/icon\_notify\_small.png | 48 \* 48 |
+| xxhdpi/icon\_notify\_small.png | 72 \* 72 |
+| xxxhdpi/icon\_notify\_small.png | 96 \* 96 |
 
 #### \[ iOS \]
 
+![](images/design/iconsize_ios.png)
+
 | 檔名 | 尺寸 |
 | --- | --- |
-| icon\_29x29.png | 29 \* 29 |
-| icon\_40x40.png | 40 \* 40 |
-| icon\_58x58.png | 58 \* 58 |
-| icon\_76x76.png | 76 \* 76 |
-| icon\_80x80.png | 80 \* 80 |
-| icon\_120x120.png | 120 \* 120 |
-| icon\_152x152.png | 152 \* 152 |
-| iTunesArtwork.png | 512 \* 512 |
-| iTunesArtwork@2x.png | 1024 \* 1024 |
+| AppleStore.png | 1024 \* 1024 |
+| icon\_20.png | 20 \* 20 |
+| icon\_20@2x.png | 40 \* 40 |
+| icon\_29.png | 29 \* 29 |
+| icon\_29@2x.png | 58 \* 58 |
+| icon\_29@3x.png | 87 \* 87 |
+| icon\_40.png | 40 \* 40 |
+| icon\_40@2x.png | 80 \* 80 |
+| icon\_60.png | 60 \* 60 |
+| icon\_60@2x.png | 120 \* 120 |
+| icon\_60@3x.png | 180 \* 180 |
+| icon\_76.png | 76 \* 76 |
+| icon\_76@2x.png | 152 \* 152 |
+| icon\_83\_5@2x.png | 167 \* 167 |
+
+* 參考：[iOS App Icon Sizes](https://developer.apple.com/ios/human-interface-guidelines/graphics/app-icon/)
 
 ---
 
@@ -147,56 +174,27 @@ Android 跟 iOS 檔名請都不要用 `-` DASH，請用 `_` 底線。副檔名�
 
 ## Sketch 匯出
 
-基本上只要每個 slice 都有設定好匯出應該會蠻順利的。唯一需要注意的是， `Android 的 Resource` 必須放到不同 Resolution 名稱的 folder 裡，所以你會出的時候會發現，sketch 產生的檔名範例如下：
+基本上只要每個 slice 都有設定好匯出應該會蠻順利的。唯一需要注意的是， `Android 的 Resource` 必須放到不同 Resolution 名稱的 folder 裡。
 
-* icon\_btn\_star\_mdpi.png
-* icon\_btn\_star\_hdpi.png
-* icon\_btn\_star\_xhpi.png
-* icon\_btn\_star\_xxhpi.png
-* icon\_btn\_star\_xxxhpi.png
+此時可以透過 sketch 的 export prefix 或是 suffix 做不同的設定：
 
-但他們應該要是：檔名都是 `icon_btn_star.png` 但是在不同解析度的 Folder 裡。
+#### \[ Android \]
 
-* /mdpi/icon\_btn\_star.png
-* /hdpi/icon\_btn\_star.png
-* /xhpi/icon\_btn\_star.png
-* /xxhpi/icon\_btn\_star.png
-* /xxxhpi/icon\_btn\_star.png
+使用 Prefix 設定資料夾名稱
 
-這時候一個一個改檔名會非常麻煩，所以教你一個快速的方法：  
-參考文章：[https://medium.com/@lmindler/using-sketch-3-and-a-bit-of-fairy-dust-for-a-better-android-workflow-f667d0048855](https://medium.com/@lmindler/using-sketch-3-and-a-bit-of-fairy-dust-for-a-better-android-workflow-f667d0048855)
+![](images/design/export_android.png) 
 
-* 先在你要放 Android 圖檔的資料夾匯出所有的 Android 圖檔後
-* 打開 cmd，移至散亂檔案的 folder，使用第一段指另，開好五個空白的資料夾（如果你還沒開的話）。
-* 使用第二段指令，就會自動幫你移動圖片們，並重新命名。
+#### \[ iOS \]
 
-```bash
-//第一段指令
-mkdir drawable-mdpi
-mkdir drawable-hdpi
-mkdir drawable-xhdpi
-mkdir drawable-xxhdpi
-mkdir drawable-xxxhdpi
-```
+使用 Suffix 設定檔名後綴
 
-```bash
-//第二段指令
-for file in $(find . -type f -iname '*-xxxhdpi*'); do
-  mv "$file" "drawable-xxxhdpi/${file/-xxxhdpi/}"
-done
-for file in $(find . -type f -iname '*-xxhdpi*'); do
-  mv "$file" "drawable-xxhdpi/${file/-xxhdpi/}"
-done
-for file in $(find . -type f -iname '*-xhdpi*'); do
-  mv "$file" "drawable-xhdpi/${file/-xhdpi/}"
-done
-for file in $(find . -type f -iname '*-hdpi*'); do
-  mv "$file" "drawable-hdpi/${file/-hdpi/}"
-done
-for file in $(find . -type f -iname '*-mdpi*'); do
-  mv "$file" "drawable-mdpi/${file/-mdpi/}"
-done
-```
+![](images/design/export_ios.png) 
+
+#### \[ Android & iOS \]
+
+當然你也可以同一個 slice 同時匯出雙系統資源
+
+![](images/design/export_both_system.png)
 
 ---
 
@@ -227,5 +225,8 @@ Android 跟 iOS 使用的色碼方式不同：
 | 10% | 1A | 5% | 0D |
 | 0% | 00 | -- | -- |
 
+---
 
+## 網路上收集到的 Ui Kit
 
+* [看這邊 內部專屬唷](https://drive.google.com/drive/folders/0B4FiKSJ3us2LY1JxbWZWTkxHeXM)
